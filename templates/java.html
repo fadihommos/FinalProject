@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Java - Code For Palestine</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="static/assets/css/main.css" />
+		<link rel="stylesheet" type="text/css" href="static/assets/css/main2.css"/>
+		<link rel="stylesheet" type="text/css" href="static/assets/css/main3.css"/>
+		<link rel="stylesheet" type="text/css" href="static/assets/css/login.css"/>
+		<link rel="icon" href="static/images/Home-icon.png">
+	</head>
+	<body class="subpage">
+
+			<header id="header">
+				<div class="inner">
+					<a href="/" class="logo"><strong>Code</strong> For Palestine</a>
+					<nav id="nav">
+						<a href="/">Home</a>
+						<a href="/About">About</a>
+						<a href="/Service">Service</a>
+						<a href="/Activities">Activities</a>
+						<button style="color: #ffffff;height: 10px;padding: 1;padding-right: 0px;" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+					</nav>
+					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+				</div>
+			</header>
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php">
+    <div style="width: 100%" class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img style="width: 300px;height: 300px" src="static/images/Home-icon.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label><b>Username</b></label>
+      <input style="width: 1048px" type="text" placeholder="Enter Username" name="uname" required>
+
+      <label><b>Password</b></label>
+      <input style="width: 1048px; float: left;" type="password" placeholder="Enter Password" name="psw" required>
+        
+      <input type="checkbox" checked="checked">
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1;width: 1065px">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <button  style="margin-left: 220px; width: 300px;" type="submit">Login</button>
+      <span class="psw"><a href="#">Forgot password?</a></span>
+    </div>
+  </form>
+</div>
+
+			<section id="three" class="wrapper">
+				<div class="inner">
+					<header class="align-center">
+						<h2>JAVA</h2>
+						<p>Programming Language</p>
+					</header>
+					<div class="image round left">
+						<img style="height: 300px;width: 300px;" src="static/images/2.png" alt="Pic 01" />
+					</div>
+					<p>"Java language" redirects here. For the natural language from the Indonesian island of Java, see Javanese language.This article is about a programming language. For the software package downloaded from java.com, see Java SE.Not to be confused with JavaScript.Java is a general-purpose computer programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible. It is intended to let application developers "write once, run anywhere" (WORA), meaning that compiled Java code can run on all platforms that support Java without the need for recompilation. Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of computer architecture. As of 2016, Java is one of the most popular programming languages in use, particularly for client-server web applications, with a reported 9 million developers.</p>
+
+					<div class="image round right">
+						<img  style="height: 300px;width: 300px;" src="static/images/1068.png" alt="Pic 02" />
+					</div>
+					<p>Java was originally developed by James Gosling at Sun Microsystems (which has since been acquired by Oracle Corporation) and released in 1995 as a core component of Sun Microsystems' Java platform. The language derives much of its syntax from C and C++, but it has fewer low-level facilities than either of them.The original and reference implementation Java compilers, virtual machines, and class libraries were originally released by Sun under proprietary licenses. As of May 2007, in compliance with the specifications of the Java Community Process, Sun relicensed most of its Java technologies under the GNU General Public License. Others have also developed alternative implementations of these Sun technologies, such as the GNU Compiler for Java (bytecode compiler), GNU Classpath (standard libraries), and IcedTea-Web (browser plugin for applets).</p>
+
+					<p>The latest version is Java 8 which is the only version currently supported for free by Oracle, although earlier versions are supported both by Oracle and other companies on a commercial basis.The syntax of Java is largely influenced by C++. Unlike C++, which combines the syntax for structured, generic, and object-oriented programming, Java was built almost exclusively as an object-oriented language.[16] All code is written inside classes, and every data item is an object, with the exception of the primitive data types, (i.e. integers, floating-point numbers, boolean values, and characters), which are not objects for performance reasons. Java reuses some popular aspects of C++ (such as printf() method).Unlike C++, Java does not support operator overloading or multiple inheritance for classes, though multiple inheritance is supported for interfaces. This simplifies the language and aids in preventing potential errors and anti-pattern design.Java uses comments similar to those of C++. There are three different styles of comments: a single line style marked with two slashes (//), a multiple line style opened with /* and closed with */, and the Javadoc commenting style opened with /** and closed with */. The Javadoc style of commenting allows the user to run the Javadoc executable to create documentation for the program and can be read by some integrated development environments (IDEs) such as Eclipse to allow developers to access documentation within the IDE.</p>
+
+				</div>
+			</section>
+
+			<footer id="footer">
+				<div class="inner">
+
+					<h3>Give Us Your FeedBack</h3>
+
+					<form action="#" method="post">
+
+						<div class="field half first">
+							<label for="name">Name</label>
+							<input name="name" id="name" type="text" placeholder="Name">
+						</div>
+						<div class="field half">
+							<label for="email">Email</label>
+							<input name="email" id="email" type="email" placeholder="Email">
+						</div>
+						<div class="field">
+							<label for="message">Message</label>
+							<textarea name="message" id="message" rows="6" placeholder="Message"></textarea>
+						</div>
+						<ul class="actions">
+							<li><input value="Send Message" class="button alt" type="submit"></li>
+						</ul>
+					</form>
+
+					<div class="copyright">
+						&copy; Designed By Yousef Hamarsheh <a href="#">ADMIN</a>
+					</div>
+
+				</div>
+			</footer>
+<script>
+var modal = document.getElementById('id01');
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+<script src="static/assets/js/jquery.min.js"></script>
+<script src="static/assets/js/skel.min.js"></script>
+<script src="static/assets/js/util.js"></script>
+<script src="static/assets/js/main.js"></script>
+
+	</body>
+</html>

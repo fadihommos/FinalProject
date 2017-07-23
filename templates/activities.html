@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Activities - Code For Palestine</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="static/assets/css/main.css" />
+		<link rel="stylesheet" type="text/css" href="static/assets/css/main2.css"/>
+		<link rel="stylesheet" type="text/css" href="static/assets/css/main3.css"/>
+		<link rel="stylesheet" type="text/css" href="static/assets/css/login.css"/>
+		<link rel="stylesheet" type="text/css" href="static/assets/css/slide.css">
+		<link rel="icon" href="static/images/Home-icon.png">
+	</head>
+	<body class="subpage">
+
+			<header id="header">
+				<div class="inner">
+					<a href="/" class="logo"><strong>Code</strong> For Palestine</a>
+					<nav id="nav">
+						<a href="/">Home</a>
+						<a href="/About">About</a>
+						<a href="/Service">Service</a>
+						<a href="#">Activities</a>
+						<a href="/Login">Login</a>
+					</nav>
+					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+				</div>
+			</header>
+			<section id="three" class="wrapper">
+				<div class="inner">
+						<h2 style="margin-left: 530px">ACTIVITIES</h2>
+						<p style="margin-left: 505px">Learning with entertainment</p>
+<div class="slider" id="main-slider">
+	<div class="slider-wrapper">
+		<img src="static/images/17629925_10154626128275889_4350692798516061608_n.jpg" alt="First" class="slide" />
+		<img src="static/images/13690842_10153903047630889_4448013584382597005_n.jpg" alt="Second" class="slide" />
+		<img src="static/images/13043602_10153707390695889_388866466093866145_n.jpg" alt="Third" class="slide" />
+		<img src="static/images/17458348_10154611381230889_2705799760387182832_n.jpg" alt="Fourth" class="slide" />
+	</div>
+</div>	
+				</div>
+			</section>
+
+			<footer id="footer">
+				<div class="inner">
+
+					<h3>Give Us Your FeedBack</h3>
+
+					<form action="#" method="post">
+
+						<div class="field half first">
+							<label for="name">Name</label>
+							<input name="name" id="name" type="text" placeholder="Name">
+						</div>
+						<div class="field half">
+							<label for="email">Email</label>
+							<input name="email" id="email" type="email" placeholder="Email">
+						</div>
+						<div class="field">
+							<label for="message">Message</label>
+							<textarea name="message" id="message" rows="6" placeholder="Message"></textarea>
+						</div>
+						<ul class="actions">
+							<li><input value="Send Message" class="button alt" type="submit"></li>
+						</ul>
+					</form>
+
+					<div class="copyright">
+						&copy; Designed By Yousef Hamarsheh <a href="#">ADMIN</a>
+					</div>
+
+				</div>
+			</footer>
+<script>
+var modal = document.getElementById('id01');
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+<script type="text/javascript">
+	(function() {
+	
+	function Slideshow( element ) {
+		this.el = document.querySelector( element );
+		this.init();
+	}
+	
+	Slideshow.prototype = {
+		init: function() {
+			this.wrapper = this.el.querySelector( ".slider-wrapper" );
+			this.slides = this.el.querySelectorAll( ".slide" );
+			this.previous = this.el.querySelector( ".slider-previous" );
+			this.next = this.el.querySelector( ".slider-next" );
+			this.index = 0;
+			this.total = this.slides.length;
+			this.timer = null;
+			
+			this.action();
+			this.stopStart();	
+		},
+		_slideTo: function( slide ) {
+			var currentSlide = this.slides[slide];
+			currentSlide.style.opacity = 1;
+			
+			for( var i = 0; i < this.slides.length; i++ ) {
+				var slide = this.slides[i];
+				if( slide !== currentSlide ) {
+					slide.style.opacity = 0;
+				}
+			}
+		},
+		action: function() {
+			var self = this;
+			self.timer = setInterval(function() {
+				self.index++;
+				if( self.index == self.slides.length ) {
+					self.index = 0;
+				}
+				self._slideTo( self.index );
+				
+			}, 4300);
+		},
+		stopStart: function() {
+			var self = this;
+			self.el.addEventListener( "mouseover", function() {
+				clearInterval( self.timer );
+				self.timer = null;
+				
+			}, false);
+			self.el.addEventListener( "mouseout", function() {
+				self.action();
+				
+			}, false);
+		}
+		
+		
+	};
+	
+	document.addEventListener( "DOMContentLoaded", function() {
+		
+		var slider = new Slideshow( "#main-slider" );
+		
+	});
+	
+	
+})();
+
+</script>
+<script src="static/assets/js/jquery.min.js"></script>
+<script src="static/assets/js/skel.min.js"></script>
+<script src="static/assets/js/util.js"></script>
+<script src="static/assets/js/main.js"></script>
+
+	</body>
+</html>
