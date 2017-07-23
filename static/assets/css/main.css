@@ -2713,12 +2713,15 @@
 			padding: 0;
 			position: absolute;
 			top: 0;
+			margin-left: 200;
+
 			font-size: 2em;
 		}
 
 			#header .logo strong {
 				color: #ffffff;
 				font-weight: 600;
+				margin-left: 200;
 			}
 
 		#header a {
