@@ -52,6 +52,11 @@ def Admin():
 @app.route("/SignUp")
 def SignUp():
 	return render_template("register.html")
+	
+@app.route("/newsfeed")
+def newsfeed():
+	return render_template("newsfeed.html")
+
 
 @app.route("/SignUpForm", methods=['POST','GET'])
 def SignUpForm():
