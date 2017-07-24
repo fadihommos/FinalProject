@@ -47,6 +47,9 @@ def Login():
 @app.route("/Admin")
 def Admin():
 	return render_template("admin.html")
+@app.route("/newsfeed")
+def newsfeed():
+	return render_template("newsfeed.html")
 
 if __name__ == "__main__":
 	app.run(debug=True)
