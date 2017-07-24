@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Usersdata</title>
+</head>
+<body>
+<table>
+<tr>
+    <td>Messages:<td>
+<tr>
+{% for feed in feeds %}
+<tr>
+    <td>{{feed.message}}<td>
+<tr>
+{% endfor %}
+</table>
+</body>
+</html>

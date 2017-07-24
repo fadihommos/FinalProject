@@ -21,4 +21,23 @@ def allUsers():
 	table = db['users']
 	return table.all()
 
+def signin(username, password):
+	table = db['users']
+	generatedid = table.find_one(username=username, password=password)
+	if generatedid > 0:
+		return True
+	return False
+
+def feedback(message):
+	table = db['feeds']
+	entry = {"message":message}
+	insert = table.insert(entry)
+	return insert
+
+def allfeeds():
+	table = db['feeds']
+	return table.all()
+
+
+
 

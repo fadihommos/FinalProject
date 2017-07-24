@@ -52,9 +52,6 @@ def Admin():
 @app.route("/SignUp")
 def SignUp():
 	return render_template("register.html")
-@app.route("/newsfeed")
-def newsfeed():
-	return render_template("newsfeed.html")
 
 @app.route("/SignUpForm", methods=['POST','GET'])
 def SignUpForm():
@@ -70,32 +67,51 @@ def SignUpForm():
 			return "success"
 		return "something went wrong"
 
+@app.route("/SignInForm", methods = ['GET','POST'])
+def SignInForm():
+	if request.method == 'POST':
+		form = request.form
+		username = form['username']
+		password = form['password']
+		user = db.getUserByUsername(username)
+		if(user == None):
+			return "username or password wrong"
+		if(db.signin(username, password)):
+			return "something went wrong"
+		return "success"
 
-@app.route("/insert")
-def insert():
-	userfeed = request.args.get('userid')
-	passfeed = request.args.get('pswrd')
-	messfeed = request.args.get('message')
-	x2 = db.insert(userfeed, passfeed, messfeed)
-	allfeed = db.showusers2()
-	feedlist = list(allfeed)
-	print userfeed
-	return render_template("success.html", feed = feedlist)
+@app.route("/FeedBack", methods = ['GET', 'POST'])
+def FeedBack():
+	if request.method == 'GET':
+		message = request.args.get('message')
+		if(db.feedback(message)):
+			return "success"
+		return "something went wrong"
+
+
+# @app.route("/insert")
+# def insert():
+# 	userfeed = request.args.get('userid')
+# 	passfeed = request.args.get('pswrd')
+# 	messfeed = request.args.get('message')
+# 	x2 = db.insert(userfeed, passfeed, messfeed)
+# 	allfeed = db.showusers2()
+# 	feedlist = list(allfeed)
+# 	print userfeed
+# 	return render_template("success.html", feed = feedlist)
 
 	# return userid
 
 @app.route("/showfeed")
 def showfeed():
-	allfeed = db.showusers2()
-	print allfeed
-	# feedlist = list(allfeed)
-	fullstring = ""
-	return render_template("success.html", feed = allfeed)
+	allfeed = db.allfeeds()
+	feedlist = list(allfeed)
+	return render_template("showusers.html", feeds = feedlist)
 
-@app.route("/insert2")
-def insert2():
-	x3 = db.insert(request.args.get('email'),request.args.get('psw'))
-	return render_template("data.html", yousef2 = x3)
+# @app.route("/insert2")
+# def insert2():
+# 	x3 = db.insert(request.args.get('email'),request.args.get('psw'))
+# 	return render_template("data.html", yousef2 = x3)
 
 
 @app.route("/showall")
@@ -104,16 +120,16 @@ def showall():
 	userlist = list(allusers)
 	return render_template("showall.html", users = userlist)
 
-@app.route("/select", methods= ["get", "post"])
-def select():
-	username = request.form['username']
-	password = request.form['password']
-	print username, password
-	x1 = db.select(username,password)
-	if x1 == None:
-		return "error"
-	else:
-		return "success"
+# @app.route("/select", methods= ["get", "post"])
+# def select():
+# 	username = request.form['username']
+# 	password = request.form['password']
+# 	print username, password
+# 	x1 = db.select(username,password)
+# 	if x1 == None:
+# 		return "error"
+# 	else:
+# 		return "success"
 
 # @app.route("/select2", methods = ["get", "post"])
 # def select2():
@@ -131,24 +147,24 @@ def select():
 # 		return "already taken"
 
 # 	return render_template("showusers.html")
-@app.route("/select2", methods = ["get", "post"])
-def register():
-	Email = request.form['email']
-	laith2 = db.select2(Email,'username2','password2')
-	if laith2 == True:
-		return "already taken"
-	else:
-		return "success"
+# @app.route("/select2", methods = ["get", "post"])
+# def register():
+# 	Email = request.form['email']
+# 	laith2 = db.select2(Email,'username2','password2')
+# 	if laith2 == True:
+# 		return "already taken"
+# 	else:
+# 		return "success"
 
-@app.route("/login" ,methods = ["get", "post"])
-def login():
-	Email = request.form['email']
-	password = request.form['password2']
-	laith = db.select2('username', password, Email)
-	if laith == True:
-		return "success"
-	else:
-		return "dosnt exist"
+# @app.route("/login" ,methods = ["get", "post"])
+# def login():
+# 	Email = request.form['email']
+# 	password = request.form['password2']
+# 	laith = db.select2('username', password, Email)
+# 	if laith == True:
+# 		return "success"
+# 	else:
+# 		return "dosnt exist"
 
 
 # @app.route("/select3", methods = ["get", "post"])
@@ -165,7 +181,7 @@ def login():
 
 @app.route("/delete", methods = ["POST", "GET"])
 def delete():
-	username = request.form['username2']
+	username = request.form['username']
 	if db.delete(username) == True:
 		return "username is wrong"
 	else:
