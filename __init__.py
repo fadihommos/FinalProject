@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, g, url_for
+from flask import Flask, render_template, request, redirect, g, url_for, session
 import db
 import os
 app = Flask(__name__)
@@ -47,9 +47,129 @@ def Login():
 @app.route("/Admin")
 def Admin():
 	return render_template("admin.html")
+
+
+@app.route("/SignUp")
+def SignUp():
+	return render_template("register.html")
 @app.route("/newsfeed")
 def newsfeed():
 	return render_template("newsfeed.html")
+
+@app.route("/SignUpForm", methods=['POST','GET'])
+def SignUpForm():
+	if request.method == 'POST':
+		form = request.form
+		username = form['username']
+		password = form['password']
+		email = form['email']
+		user = db.getUserByUsername(username)
+		if(user != None):
+			return "Username taken!"
+		if(db.signup(username, password, email)):
+			return "success"
+		return "something went wrong"
+
+
+@app.route("/insert")
+def insert():
+	userfeed = request.args.get('userid')
+	passfeed = request.args.get('pswrd')
+	messfeed = request.args.get('message')
+	x2 = db.insert(userfeed, passfeed, messfeed)
+	allfeed = db.showusers2()
+	feedlist = list(allfeed)
+	print userfeed
+	return render_template("success.html", feed = feedlist)
+
+	# return userid
+
+@app.route("/showfeed")
+def showfeed():
+	allfeed = db.showusers2()
+	print allfeed
+	# feedlist = list(allfeed)
+	fullstring = ""
+	return render_template("success.html", feed = allfeed)
+
+@app.route("/insert2")
+def insert2():
+	x3 = db.insert(request.args.get('email'),request.args.get('psw'))
+	return render_template("data.html", yousef2 = x3)
+
+
+@app.route("/showall")
+def showall():
+	allusers = db.allUsers()
+	userlist = list(allusers)
+	return render_template("showall.html", users = userlist)
+
+@app.route("/select", methods= ["get", "post"])
+def select():
+	username = request.form['username']
+	password = request.form['password']
+	print username, password
+	x1 = db.select(username,password)
+	if x1 == None:
+		return "error"
+	else:
+		return "success"
+
+# @app.route("/select2", methods = ["get", "post"])
+# def select2():
+# 	username = request.form['email']
+# 	password = request.form['psw']
+# 	print username
+# 	x2 = db.select(username,password)
+# 	print x2
+# 	if x2 is None:
+# 		if (db.insert(password, username)):
+# 			return render_template("signsuccess.html")
+# 		else:
+# 			return "already taken"
+# 	else:
+# 		return "already taken"
+
+# 	return render_template("showusers.html")
+@app.route("/select2", methods = ["get", "post"])
+def register():
+	Email = request.form['email']
+	laith2 = db.select2(Email,'username2','password2')
+	if laith2 == True:
+		return "already taken"
+	else:
+		return "success"
+
+@app.route("/login" ,methods = ["get", "post"])
+def login():
+	Email = request.form['email']
+	password = request.form['password2']
+	laith = db.select2('username', password, Email)
+	if laith == True:
+		return "success"
+	else:
+		return "dosnt exist"
+
+
+# @app.route("/select3", methods = ["get", "post"])
+# def select3():
+# 	username  = request.form['username2']
+# 	password = request.form['password2']
+# 	x4 = db.select(username, password)
+# 	print username
+# 	if x4 != None:
+# 		return render_template("showlogin.html", loguser = x4)
+	# else:
+	# 	return "username or password is wrong"
+
+
+@app.route("/delete", methods = ["POST", "GET"])
+def delete():
+	username = request.form['username2']
+	if db.delete(username) == True:
+		return "username is wrong"
+	else:
+		return "your  account is deleted"
 
 if __name__ == "__main__":
 	app.run(debug=True)

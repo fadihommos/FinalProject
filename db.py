@@ -2,74 +2,23 @@ import dataset
 import sqlite
 import sqlalchemy
 
-db = dataset.connect('sqlite:///wocode', engine_kwargs={'poolclass':sqlalchemy.pool.NullPool})
+db = dataset.connect('postgres://ykjzzkipywzyuy:d69b35fcb9b5f29f2fc27b8077c54b8d454c969c61ba024ebec353f5c658a7e7@ec2-107-22-162-158.compute-1.amazonaws.com:5432/d85u0f3u62mvt1', engine_kwargs={'poolclass':sqlalchemy.pool.NullPool})
 
-def tempdata():
-	table = db['sometable']
-	table.insert(dict(name='John Doe', age=37, password='password', username='username'))
-	table.insert(dict(name='Jane Doe', age=34, gender='female', password='pswrd', username='userid'))
-	table.insert(dict(name='Joze Doe', password='password1', username='username1'))
-	table.insert(dict(name= 'Hoje Doe', username='email', password='psw'))
-	table.insert(dict(name= 'Joje Doe', username = 'username2', password = 'password2' ))
-
-
-def insert(passs,user):
-	table = db['sometable']
-	generated_id = table.insert(dict(password=passs, username=user))
-	print generated_id
-	if generated_id and generated_id > 0:
-	#if generated_id = None:
+def signup(username, password, email):
+	table = db["users"]
+	entry = {"username": username, "password" : password, "email" : email}
+	generatedid = table.insert(entry)
+	if generatedid > 0:
 		return True
-	else:
-		return False
+	return False
 
-def showusers():
-	table = db['sometable']
-	Hoje = table.all()
-	return Hoje
+def getUserByUsername(username):
+	table = db["users"]
+	user = table.find_one(username=username)
+	return user
 
-def showusers2():
-	table = db['sometable']
-	Jane = table.all()
-	users = []
-	for user in Jane:
-		users.append(user)
-	return users
+def allUsers():
+	table = db['users']
+	return table.all()
 
 
-def chat (email,feedback):
-	table= db['sometable']
-	generated_id = table.insert(dict(email= username ,feedback= password))
-	if generated_id and generated_id > 0:
-		return True
-	else:
-		return False
-
-
-def select(username,password):
-	table = db['sometable']
-	Joze = table.find_one(username = username, password= password)
-	return Joze
-
-
-def select2(usertake):
-	table = db["sometable"]
-	Hoje = table.find_one(email = usertake)
-	return Hoje
-
-
-def select3(username2, password2):
-	table = db["sometable"]
-	Joje = table.find_one(username2 = username2, password2 = password2)
-	return Joje
-	
-def delete(username2):
-	table = db["sometable"]
-	laith = table.find_one(username = username2)
-	if laith == None:
-		return True
-	else:
-		laith2 = table.delete(username = username2)
-		return  False
-	
-#tempdata()
