@@ -33,7 +33,7 @@
 						<a href="/Activities">Activities</a>
 						<a href="/Login">Login</a>
 						<a href="/newsfeeds">NewsFeed</a>
-						<button type="button" onclick="alert('Write (/logout) in the URL to logout! ')" align="1000px-2002px">Logout</button></li>
+						<a type="button" href="/logout" align="1000px-2002px">Logout</a>
 
 					</nav>
 					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
@@ -82,11 +82,10 @@
 
    		<div id="main" class="eight columns">
 
-<<<<<<< HEAD
-=======
+
 	   		<article class="entry">
 
->>>>>>> 7a6442b73dfe225504c779fed61c889ff8122dce
+
 	   		{% for new in newsfeed %}
 				<article class="entry">
 	   			
@@ -113,8 +112,6 @@
 					</div> 
 
 				</article> <!-- end entry -->  	
-
-	   			{{new.text}}
 
 	   		{% endfor %}
 				</article> <!-- end entry -->
