@@ -20,6 +20,10 @@ def Service():
 def Activitites():
 	return render_template("activities.html")
 
+@app.route("/Year1")
+def Year1():
+	return render_template("cards2.html")
+
 @app.route("/Year2")
 def Year2():
 	return render_template("cards.html")
@@ -52,10 +56,22 @@ def Admin():
 @app.route("/SignUp")
 def SignUp():
 	return render_template("register.html")
-	
-@app.route("/newsfeed")
-def newsfeed():
-	return render_template("newsfeed.html")
+
+# @app.route('/newsfeed', methods= ["GET","POST"])
+# def newsFeed():
+#     if request.method == "GET":
+#     	postsTable=db["posts"]
+#     	allposts = list(postsTable.all())[::-1]
+#         return render_template("newsfeed.html", allposts=allposts)
+#     else:
+#         form=request.form
+#         username=form["username"]
+#         post=form["Text"]
+#         time_string = time.strftime('%l:%M on %b %d, %Y')
+#         entry = {"username":username, "post": post, "time_string" : time_string}
+# #        posts.insert(entry)
+# #        allposts = list(posts.all())[::-1]
+# #        return render_template("newsfeed.html", allposts=allposts)
 
 
 @app.route("/SignUpForm", methods=['POST','GET'])
@@ -193,4 +209,4 @@ def delete():
 		return "your  account is deleted"
 
 if __name__ == "__main__":
-	app.run(debug=True)
+	app.run()
