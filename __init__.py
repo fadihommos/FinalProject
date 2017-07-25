@@ -20,6 +20,10 @@ def Service():
 def Activitites():
 	return render_template("activities.html")
 
+@app.route("/Year1")
+def Year1():
+	return render_template("cards2.html")
+
 @app.route("/Year2")
 def Year2():
 	return render_template("cards.html")
@@ -227,4 +231,4 @@ def delete():
 		return "your  account is deleted"
 
 if __name__ == "__main__":
-	app.run(debug=True)
+	app.run()
