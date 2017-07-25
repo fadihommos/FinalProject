@@ -24,6 +24,7 @@ def allUsers():
 def signin(username, password):
 	table = db['users']
 	generatedid = table.find_one(username=username, password=password)
+	print generatedid
 	if generatedid > 0:
 		return True
 	return False
@@ -49,3 +50,6 @@ def newsfeed(emailfeed,text):
 def allnews():
 	newsfeeds = db['newsfeeds']
 	return newsfeeds.all()
+
+def delete():
+	table = db['users']

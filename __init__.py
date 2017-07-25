@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, g, url_for, session
+from flask import Flask, render_template, request, redirect, g, url_for, session, escape
 import db
 import os
 from time import localtime, strftime
@@ -87,8 +87,9 @@ def SignInForm():
 		if(user == None):
 			return "username or password wrong"
 		if(db.signin(username, password)):
-			return "something went wrong"
-		return "success"
+			session['username'] = request.form['username']
+			return redirect("/")
+		return "something went wrong"
 
 @app.route("/FeedBack", methods = ['GET', 'POST'])
 def FeedBack():
@@ -133,6 +134,9 @@ def showall():
 @app.route("/newsfeeds", methods = ['GET', 'POST'])
 def newsfeeds():
 	if request.method == 'GET':
+		if 'username' in session:
+			return render_template("newsfeed.html"), escape(session['username'])
+		return redirect ('/Login')
 		allnews = db.allnews()
 		newslist = list(allnews)
 		print 'get',newslist
@@ -148,6 +152,14 @@ def newsfeeds():
 		newslist = list(allnews)
 		print 'post',newslist
 		return render_template('newsfeed.html',newsfeed = newslist )
+
+
+
+@app.route('/logout')
+def logout():
+	session.pop('username', None)
+	return redirect('/')
+
 
 # @app.route("/shownews")
 # def shownews():
