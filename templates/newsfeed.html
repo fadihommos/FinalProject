@@ -8,7 +8,6 @@
 	<meta name="description" content="">  
 	<meta name="author" content="">
 
-
    <link rel="stylesheet" href="static/assets/css1/default.css">
 	<link rel="stylesheet" href="static/assets/css1/layout.css">  
 	<link rel="stylesheet" href="static/assets/css1/media-queries.css"> 
@@ -33,7 +32,9 @@
 						<a href="/Service">Service</a>
 						<a href="/Activities">Activities</a>
 						<a href="/Login">Login</a>
-						<a href="/newsfeed">NewsFeed</a>
+						<a href="/newsfeeds">NewsFeed</a>
+						<button type="button" onclick="alert('Write (/logout) in the URL to logout! ')" align="1000px-2002px">Logout</button></li>
+
 					</nav>
 					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
 				</div>
@@ -81,11 +82,33 @@
 
    		<div id="main" class="eight columns">
 
-	   		<article class="entry">
-
-	   		hello world
 	   		{% for new in newsfeed %}
-	   			{{new.emailfeed}}
+				<article class="entry">
+	   			
+					<header class="entry-header">
+
+						<h2 class="entry-title">
+							<a href="single.html" title=""> {{new.emailfeed}}</a>
+						</h2> 				 
+					
+						<div class="entry-meta">
+							<ul>
+								<li>July 23, 2017</li>
+								<span class="meta-sep">&bull;</span>								
+								<li>
+									<a href="#" title="" rel="category tag">student</a>  
+
+							</ul>
+						</div> 
+					 
+					</header> 			
+
+					<div class="entry-content">
+						<p>{{new.text}} </p>
+					</div> 
+
+				</article> <!-- end entry -->  	
+
 	   			{{new.text}}
 
 	   		{% endfor %}
