@@ -56,22 +56,10 @@ def Admin():
 @app.route("/SignUp")
 def SignUp():
 	return render_template("register.html")
-
-# @app.route('/newsfeed', methods= ["GET","POST"])
-# def newsFeed():
-#     if request.method == "GET":
-#     	postsTable=db["posts"]
-#     	allposts = list(postsTable.all())[::-1]
-#         return render_template("newsfeed.html", allposts=allposts)
-#     else:
-#         form=request.form
-#         username=form["username"]
-#         post=form["Text"]
-#         time_string = time.strftime('%l:%M on %b %d, %Y')
-#         entry = {"username":username, "post": post, "time_string" : time_string}
-# #        posts.insert(entry)
-# #        allposts = list(posts.all())[::-1]
-# #        return render_template("newsfeed.html", allposts=allposts)
+	
+# @app.route("/newsfeed")
+# def newsfeed():
+# 	return render_template("newsfeed.html")
 
 
 @app.route("/SignUpForm", methods=['POST','GET'])
@@ -140,6 +128,31 @@ def showall():
 	allusers = db.allUsers()
 	userlist = list(allusers)
 	return render_template("showall.html", users = userlist)
+
+@app.route("/newsfeeds", methods = ['GET', 'POST'])
+def newsfeeds():
+	if request.method == 'GET':
+		allnews = db.allnews()
+		newslist = list(allnews)
+		print 'get',newslist
+		return render_template('newsfeed.html',newsfeed = newslist)
+	else:
+		form = request.form
+		emailfeed = form['emailfeed']
+		text = form['text']
+		print(emailfeed, text)
+		newsfeed = db.newsfeed(emailfeed, text)
+		allnews = db.allnews()
+		newslist = list(allnews)
+		print 'post',newslist
+		return render_template('newsfeed.html',newsfeed = newslist )
+
+
+# @app.route("/shownews")
+# def shownews():
+	
+# 	return render_template("showusers.html", news = newslist)
+
 
 # @app.route("/select", methods= ["get", "post"])
 # def select():

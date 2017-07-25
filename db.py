@@ -39,5 +39,13 @@ def allfeeds():
 	return table.all()
 
 
+def newsfeed(emailfeed,text):
+	newsfeed = db['newsfeeds']
+	entry = {'emailfeed':emailfeed, 'text':text}
+	insert = newsfeed.insert(entry)
+	print insert
+	return insert
 
-
+def allnews():
+	newsfeeds = db['newsfeeds']
+	return newsfeeds.all()
