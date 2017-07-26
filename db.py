@@ -1,8 +1,11 @@
 import dataset
-import sqlite
 import sqlalchemy
 
-db = dataset.connect('postgres://ykjzzkipywzyuy:d69b35fcb9b5f29f2fc27b8077c54b8d454c969c61ba024ebec353f5c658a7e7@ec2-107-22-162-158.compute-1.amazonaws.com:5432/d85u0f3u62mvt1', engine_kwargs={'poolclass':sqlalchemy.pool.NullPool})
+# sadek's db
+#db = dataset.connect('postgres://ykjzzkipywzyuy:d69b35fcb9b5f29f2fc27b8077c54b8d454c969c61ba024ebec353f5c658a7e7@ec2-107-22-162-158.compute-1.amazonaws.com:5432/d85u0f3u62mvt1', engine_kwargs={'poolclass':sqlalchemy.pool.NullPool})
+
+# heroku db linked to codepalestine
+db = dataset.connect('postgres://gekfeekpdeldpr:b9aeb07051bb27207f972128b045e2e0a2a20b07be2d2c86147914fe538b7043@ec2-54-204-32-145.compute-1.amazonaws.com:5432/dchaerkmjsv0dn', engine_kwargs={'poolclass':sqlalchemy.pool.NullPool})
 
 def signup(username, password, email):
 	table = db["users"]

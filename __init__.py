@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, g, url_for, session, escape
 import db
 import os
-from time import localtime, strftime
+import time
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
@@ -145,13 +145,14 @@ def newsfeeds():
 		form = request.form
 		emailfeed = form['emailfeed']
 		text = form['text']
+		time_string = time.strftime('%l:%M on %b %d, %Y')
 #		time = time.strftime('%1:%M on %b %d, %Y')
-		print(emailfeed, text)
+		print(emailfeed, text, time_string)
 		newsfeed = db.newsfeed(emailfeed, text)
 		allnews = db.allnews()
 		newslist = list(allnews)
 		print 'post',newslist
-		return render_template('newsfeed.html',newsfeed = newslist )
+		return render_template('newsfeed.html',newsfeed = newslist, time_string= time_string)
 
 
 
