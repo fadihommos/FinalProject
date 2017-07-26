@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Error - Login</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="static/assets/css/main.css" />
+		<link rel="stylesheet" type="text/css" href="static/assets/css/main2.css"/>
+		<link rel="stylesheet" type="text/css" href="static/assets/css/main3.css"/>
+		<link rel="stylesheet" type="text/css" href="static/assets/css/login.css"/>
+		<link rel="icon" href="static/images/Home-icon.png">
+	</head>
+	<body class="subpage">
+
+			<header id="header">
+				<div class="inner">
+					<a href="/" class="logo"><strong>Code</strong> For Palestine</a>
+					<nav id="nav">
+						<a href="/">Home</a>
+						<a href="/About">About</a>
+						<a href="/Service">Service</a>
+						<a href="/Activities">Activities</a>
+						<a href="/newsfeeds">NewsFeed</a>
+					</nav>
+					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+				</div>
+			</header>
+			<section id="three" class="wrapper">
+			<h1 style="margin-left: 606px">Username Is Taken!</h1>
+			<a style="margin-left: 646px" href="/SignUpForm">Try Again</a>
+			</section>
+
+			<footer id="footer">
+				<div class="inner">
+
+					<h3>Give Us Your FeedBack</h3>
+
+					<form action="/FeedBack" method="post">
+
+						<div class="field half first">
+							<label for="name">Name</label>
+							<input name="name" id="name" type="text" placeholder="Name">
+						</div>
+						<div class="field half">
+							<label for="email">Email</label>
+							<input name="email" id="email" type="email" placeholder="Email">
+						</div>
+						<div class="field">
+							<label for="message">Message</label>
+							<textarea name="message" id="message" rows="6" placeholder="Message"></textarea>
+						</div>
+						<ul class="actions">
+							<li><input value="Send Message" class="button alt" type="submit"></li>
+						</ul>
+					</form>
+
+					<div class="copyright">
+						&copy; Designed By Yousef Hamarsheh and Fadi Abu Al Hommos <a href="#">ADMIN</a>
+					</div>
+
+				</div>
+			</footer>
+<script>
+var modal = document.getElementById('id01');
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+<script src="static/assets/js/jquery.min.js"></script>
+<script src="static/assets/js/skel.min.js"></script>
+<script src="static/assets/js/util.js"></script>
+<script src="static/assets/js/main.js"></script>
+
+	</body>
+</html>

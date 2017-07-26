@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, g, url_for, session, escape
 import db
 import os
-from time import localtime, strftime
+import time
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
@@ -72,9 +72,9 @@ def SignUpForm():
 		email = form['email']
 		user = db.getUserByUsername(username)
 		if(user != None):
-			return "Username taken!"
+			return render_template("staken.html")
 		if(db.signup(username, password, email)):
-			return "success"
+			return render_template("success.html")
 		return "something went wrong"
 
 @app.route("/SignInForm", methods = ['GET','POST'])
@@ -85,7 +85,7 @@ def SignInForm():
 		password = form['password']
 		user = db.getUserByUsername(username)
 		if(user == None):
-			return "username or password wrong"
+			return render_template("wronglog.html")
 		if(db.signin(username, password)):
 			session['username'] = request.form['username']
 			return redirect("/")
@@ -96,7 +96,7 @@ def FeedBack():
 	if request.method == 'GET':
 		message = request.args.get('message')
 		if(db.feedback(message)):
-			return "success"
+			return render_template("feedback.html")
 		return "something went wrong"
 
 
@@ -145,13 +145,14 @@ def newsfeeds():
 		form = request.form
 		emailfeed = form['emailfeed']
 		text = form['text']
+		time_string = time.strftime('%l:%M on %b %d, %Y')
 #		time = time.strftime('%1:%M on %b %d, %Y')
-		print(emailfeed, text)
+		print(emailfeed, text, time_string)
 		newsfeed = db.newsfeed(emailfeed, text)
 		allnews = db.allnews()
 		newslist = list(allnews)[::-1]
 		print 'post',newslist
-		return render_template('newsfeed.html',newsfeed = newslist )
+		return render_template('newsfeed.html',newsfeed = newslist, time_string= time_string)
 
 
 
@@ -228,11 +229,17 @@ def logout():
 
 @app.route("/delete", methods = ["POST", "GET"])
 def delete():
-	username = request.form['username']
-	if db.delete(username) == True:
-		return "username is wrong"
+	print "sakdjahjkdah"
+	if request.method == "GET":
+		return render_template("delete.html")
 	else:
-		return "your  account is deleted"
+		username = request.form['username']
+		password = request.form['password']
+		print username
+		if db.delete(username, password) == True:
+			return render_template("wrongdel.html")
+		else:
+			return render_template("accdel.html")
 
 if __name__ == "__main__":
 	app.run(debug = True)
