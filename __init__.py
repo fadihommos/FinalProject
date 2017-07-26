@@ -132,7 +132,7 @@ def showall():
 	userlist = list(allusers)
 	return render_template("service.html", users = userlist)
 
-@app.route("/newsfeed", methods = ['GET', 'POST'])
+@app.route("/newsfeeds", methods = ['GET', 'POST'])
 def newsfeeds():
 	if request.method == 'GET':
 		if 'username' in session:
