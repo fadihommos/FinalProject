@@ -3,7 +3,8 @@ import db
 import os
 import time
 app = Flask(__name__)
-app.secret_key = os.urandom(24)
+app.secret_key = "'drtrjndfhdfhb45y3478hbdfe4t84hhudh78dre8t8yefy87erhbfudydsytreuyueruy777748fhdfuyg78h'"
+
 
 @app.route("/")
 def Home():
@@ -129,30 +130,36 @@ def showfeed():
 def showall():
 	allusers = db.allUsers()
 	userlist = list(allusers)
-	return render_template("showall.html", users = userlist)
+	return render_template("service.html", users = userlist)
 
 @app.route("/newsfeeds", methods = ['GET', 'POST'])
 def newsfeeds():
 	if request.method == 'GET':
 		if 'username' in session:
-			return render_template("newsfeed.html"), escape(session['username'])
+			return render_template("newsfeed.html")
 		return redirect ('/Login')
 		allnews = db.allnews()
 		newslist = list(allnews)
-		print 'get',newslist
-		return render_template('newsfeed.html',newsfeed = newslist)
+		#print 'get',newslist
+		return render_template('service.html',newsfeed = newslist)
 	else:
 		form = request.form
 		emailfeed = form['emailfeed']
 		text = form['text']
 		time_string = time.strftime('%l:%M on %b %d, %Y')
 #		time = time.strftime('%1:%M on %b %d, %Y')
-		print(emailfeed, text, time_string)
-		newsfeed = db.newsfeed(emailfeed, text)
+		#print(emailfeed, text, time_string)
+		newsfeed = db.newsfeed(emailfeed, text, time_string)
 		allnews = db.allnews()
+<<<<<<< HEAD
 		newslist = list(allnews)[::-1]
 		print 'post',newslist
 		return render_template('newsfeed.html',newsfeed = newslist, time_string= time_string)
+=======
+		newslist = list(allnews)
+		#print 'post',newslist
+		return render_template('service.html',newsfeed = newslist, time_string= time_string)
+>>>>>>> 20ee60d87a4d34ed8bc992f08e8ba658e978259f
 
 
 
