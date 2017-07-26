@@ -51,5 +51,11 @@ def allnews():
 	newsfeeds = db['newsfeeds']
 	return newsfeeds.all()
 
-def delete():
+def delete(username):
 	table = db['users']
+
+	#when somebody create an account they can deleted by this function
+	#if the function found the username in the database it will deleted
+	#first found the username by found_one
+	#table.delete()
+

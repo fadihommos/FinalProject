@@ -149,7 +149,7 @@ def newsfeeds():
 		print(emailfeed, text)
 		newsfeed = db.newsfeed(emailfeed, text)
 		allnews = db.allnews()
-		newslist = list(allnews)
+		newslist = list(allnews)[::-1]
 		print 'post',newslist
 		return render_template('newsfeed.html',newsfeed = newslist )
 
@@ -235,4 +235,4 @@ def delete():
 		return "your  account is deleted"
 
 if __name__ == "__main__":
-	app.run()
+	app.run(debug = True)
