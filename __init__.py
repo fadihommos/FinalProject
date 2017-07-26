@@ -130,18 +130,18 @@ def showfeed():
 def showall():
 	allusers = db.allUsers()
 	userlist = list(allusers)
-	return render_template("showall.html", users = userlist)
+	return render_template("service.html", users = userlist)
 
 @app.route("/newsfeeds", methods = ['GET', 'POST'])
 def newsfeeds():
 	if request.method == 'GET':
 		if 'username' in session:
-			return render_template("newsfeed.html"), escape(session['username'])
+			return render_template("service.html"), escape(session['username'])
 		return redirect ('/Login')
 		allnews = db.allnews()
 		newslist = list(allnews)
 		#print 'get',newslist
-		return render_template('newsfeed.html',newsfeed = newslist)
+		return render_template('service.html',newsfeed = newslist)
 	else:
 		form = request.form
 		emailfeed = form['emailfeed']
@@ -153,7 +153,7 @@ def newsfeeds():
 		allnews = db.allnews()
 		newslist = list(allnews)
 		#print 'post',newslist
-		return render_template('newsfeed.html',newsfeed = newslist, time_string= time_string)
+		return render_template('service.html',newsfeed = newslist, time_string= time_string)
 
 
 
