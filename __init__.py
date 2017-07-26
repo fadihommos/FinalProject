@@ -140,7 +140,7 @@ def newsfeeds():
 		return redirect ('/Login')
 		allnews = db.allnews()
 		newslist = list(allnews)
-		print 'get',newslist
+		#print 'get',newslist
 		return render_template('newsfeed.html',newsfeed = newslist)
 	else:
 		form = request.form
@@ -148,11 +148,11 @@ def newsfeeds():
 		text = form['text']
 		time_string = time.strftime('%l:%M on %b %d, %Y')
 #		time = time.strftime('%1:%M on %b %d, %Y')
-		print(emailfeed, text, time_string)
+		#print(emailfeed, text, time_string)
 		newsfeed = db.newsfeed(emailfeed, text, time_string)
 		allnews = db.allnews()
 		newslist = list(allnews)
-		print 'post',newslist
+		#print 'post',newslist
 		return render_template('newsfeed.html',newsfeed = newslist, time_string= time_string)
 
 
