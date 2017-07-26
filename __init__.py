@@ -58,6 +58,10 @@ def Admin():
 @app.route("/SignUp")
 def SignUp():
 	return render_template("register.html")
+	
+# @app.route("/newsfeed")
+# def newsfeed():
+# 	return render_template("newsfeed.html")
 
 
 @app.route("/SignUpForm", methods=['POST','GET'])
@@ -131,8 +135,8 @@ def showall():
 @app.route("/newsfeed", methods = ['GET', 'POST'])
 def newsfeeds():
 	if request.method == 'GET':
-		if 'username' in session:
-			return render_template("service.html"), escape(session['username'])
+		# if 'username' in session:
+		return render_template("newsfeed.html"), escape(session['username'])
 		return redirect ('/Login')
 		allnews = db.allnews()
 		newslist = list(allnews)
