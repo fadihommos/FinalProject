@@ -151,15 +151,15 @@ def newsfeeds():
 		#print(emailfeed, text, time_string)
 		newsfeed = db.newsfeed(emailfeed, text, time_string)
 		allnews = db.allnews()
-<<<<<<< HEAD
+
 		newslist = list(allnews)[::-1]
 		print 'post',newslist
 		return render_template('newsfeed.html',newsfeed = newslist, time_string= time_string)
-=======
+
 		newslist = list(allnews)
 		#print 'post',newslist
 		return render_template('service.html',newsfeed = newslist, time_string= time_string)
->>>>>>> 20ee60d87a4d34ed8bc992f08e8ba658e978259f
+
 
 
 
