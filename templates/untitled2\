@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Code For Palestine/members</title>
+	<link rel="stylesheet" href="static/assets/css/cards.css"/>
+	<link rel="icon" href="static/images/Home-icon.png">
+</head>
+<body class="subpage">
+	<header id="header">
+					<div class="inner">
+						<a href="index.html" class="logo" style="padding: 10px;"><strong>Code</strong> For Palestine</a>
+						<a href="#" style="padding: 10px;" class="mains"><strong style="font-size: 30px;padding: 10px;">Year#1/Members</strong></a>
+					.<nav style="padding: 10px;margin-top: -43px;" id="nav">
+						<a href="/">Home</a>
+						<a href="/About">About</a>
+						<a href="/Service">Service</a>
+						<a href="/Activities">Activities</a>
+            <a href="/newsfeed">Newsfeed</a>
+						</nav>
+						<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+					</div>
+			</header>
+<table id="profiles">
+<tr>
+<td>
+<div class="card">
+  <img src="static/images/Tahseenahmad.JPG" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b>Tahseen Ahmad</b></h4> 
+    <p>Student/wecode</p> 
+  </div>
+</div>
+</td>
+</tr>
+</table>
+<table id="profiles">
+<tr>
+<td>
+<div class="card">
+  <img src="static/images/teamaamer.JPG" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b> Teama Amer</b></h4> 
+    <p>Student/wecode</p> 
+  </div>
+</div>
+</td>
+</tr>
+</table>
+<table id="profiles">
+<tr>
+<td>
+<div class="card">
+  <img src="static/images/yazanratrout.JPG" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b>Yazan Ratrout</b></h4> 
+    <p>Student/wecode</p>
+  </div>
+</div>
+</td>
+</tr>
+</table>
+<table id="profiles">
+<tr>
+<td>
+<div class="card">
+  <img src="static/images/afeefbsharat.JPG" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b>Afeef Bsharat</b></h4> 
+    <p>Student/wecode</p> 
+  </div>
+</div>
+</td>
+</tr>
+</table>
+<table id="profiles">
+<tr>
+<td>
+<div class="card">
+  <img src="static/images/ahmaddarawsheh.JPG" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b>Ahmad Darawsheh</b></h4> 
+    <p>Student/wecode</p> 
+  </div>
+</div>
+</td>
+</tr>
+</table>
+<table id="profiles">
+<tr>
+<td>
+<div class="card">
+  <img src="static/images/ahmaddomaide'.JPG" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b>Ahmad Domaide</b></h4> 
+    <p>Student/wecode</p> 
+  </div>
+</div>
+</td>
+</tr>
+</table>
+<table id="profiles">
+<tr>
+<td>
+<div class="card">
+  <img src="static/images/ahmaddurra.JPG" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b>Ahmad Durra</b></h4> 
+    <p>Student/wecode</p> 
+  </div>
+</div>
+</td>
+</tr>
+</table>
+<table id="profiles">
+<tr>
+<td>
+<div class="card">
+  <img src="static/images/ayabaara.JPG" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b>Aya Baara</b></h4> 
+    <p>Student/wecode</p> 
+  </div>
+</div>
+</td>
+</tr>
+</table>
+<table id="profiles">
+<tr>
+<td>
+<div class="card">
+  <img src="static/images/baselhijaz.JPG" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b>Basel Hijaz </b></h4> 
+    <p>Student/wecode</p> 
+  </div>
+</div>
+</td>
+</tr>
+</table>
+<table id="profiles">
+<tr>
+<td>
+<div class="card">
+  <img src="static/images/fouadturjman.JPG" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b>Fouad Turjman</b></h4> 
+    <p>Student/wecode</p> 
+  </div>
+</div>
+</td>
+</tr>
+</table>
+<table id="profiles">
+<tr>
+<td>
+<div class="card">
+  <img src="static/images/ghadaissa.JPG" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b>Ghada Issa</b></h4> 
+    <p>Student/wecode</p> 
+  </div>
+</div>
+</td>
+</tr>
+</table>
+<table id="profiles">
+<tr>
+<td>
+<div class="card">
+  <img src="static/images/kareemawad.JPG" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b>Kareem Awad</b></h4> 
+    <p>Student/wecode</p> 
+  </div>
+</div>
+</td>
+</tr>
+</table>
+<table id="profiles">
+<tr>
+<td>
+<div class="card">
+  <img src="static/images/leenfahed.JPG" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b>Leen Fahed</b></h4> 
+    <p>Student/wecode</p> 
+  </div>
+</div>
+</td>
+</tr>
+</table>
+<table id="profiles">
+<tr>
+<td>
+<div class="card">
+  <img src="static/images/majdBarghouthi.JPG" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b>Majd Barghouthi</b></h4> 
+    <p>Student/wecode</p> 
+  </div>
+</div>
+</td>
+</tr>
+</table>
+<table id="profiles">
+<tr>
+<td>
+<div class="card">
+  <img src="static/images/mayasheeb.JPG" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b>Maya Sheeb</b></h4> 
+    <p>Student/wecode</p> 
+  </div>
+</div>
+</td>
+</tr>
+</table>
+<table id="profiles">
+<tr>
+<td>
+<div class="card">
+  <img src="static/images/mayarshanan.JPG" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b>Mayar Shanan</b></h4> 
+    <p>Student/wecode</p> 
+  </div>
+</div>
+</td>
+</tr>
+</table>
+<table id="profiles">
+<tr>
+<td>
+<div class="card">
+  <img src="static/images/maysamalaa.JPG" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b>Maysam Alaa</b></h4> 
+    <p>Student/wecode</p> 
+  </div>
+</div>
+</td>
+</tr>
+</table>
+<table id="profiles">
+<tr>
+<td>
+<div class="card">
+  <img src="static/images/michielmsasaad.JPG" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b>Michiel Msasaad</b></h4> 
+    <p>Student/wecode</p> 
+  </div>
+</div>
+</td>
+</tr>
+</table>
+<table id="profiles">
+<tr>
+<td>
+<div class="card">
+  <img src="static/images/mohammadaboshilbaya.JPG" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b>Mohammad Abo Shilbaya</b></h4> 
+    <p>Student/wecode</p> 
+  </div>
+</div>
+</td>
+</tr>
+</table>
+<table id="profiles">
+<tr>
+<td>
+<div class="card">
+  <img src="static/images/mohammadanwar.JPG" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b>Mohammad Anwar</b></h4> 
+    <p>Student/wecode</p> 
+  </div>
+</div>
+</td>
+</tr>
+</table>
+<table id="profiles">
+<tr>
+<td>
+<div class="card">
+  <img src="static/images/mohammabarbarawe.JPG" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b>Mohammad Barbarawe</b></h4> 
+    <p>Student/wecode</p> 
+  </div>
+</div>
+</td>
+</tr>
+</table>
+<table id="profiles">
+<tr>
+<td>
+<div class="card">
+  <img src="static/images/rasheeqaramahi.JPG" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b>Rasheeqa Ramahi</b></h4> 
+    <p>Student/wecode</p> 
+  </div>
+</div>
+</td>
+</tr>
+</table>
+<table id="profiles">
+<tr>
+<td>
+<div class="card">
+  <img src="static/images/sajaabooudeh.JPG" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b>Saja Abo Oudeh</b></h4> 
+    <p>Student/wecode</p> 
+  </div>
+</div>
+</td>
+</tr>
+</table>
+<table id="profiles">
+<tr>
+<td>
+<div class="card">
+  <img src="static/images/sararasheed.JPG" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b>Sara Rasheed</b></h4> 
+    <p>Student/wecode</p> 
+  </div>
+</div>
+</td>
+</tr>
+</table>
+<table id="profiles">
+<tr>
+<td>
+<div class="card">
+  <img src="static/images/subhiawad.JPG" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b>Subhi Awad</b></h4> 
+    <p>Student/wecode</p> 
+  </div>
+</div>
+</td>
+</tr>
+</table>
+<table id="profiles">
+<tr>
+<td>
+<div class="card">
+  <img src="static/images/shahdnajas.JPG" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b>Shahd Najas</b></h4> 
+    <p>Student/wecode</p> 
+  </div>
+</div>
+</td>
+</tr>
+</table>
+
+
+
+
+
+# @app.route('/newsfeed', methods= ["GET","POST"])
+# def newsFeed():
+#     if request.method == "GET":
+#       postsTable=db["posts"]
+#       allposts = list(postsTable.all())[::-1]
+#         return render_template("newsfeed.html", allposts=allposts)
+#     else:
+#         form=request.form
+#         username=form["username"]
+#         post=form["Text"]
+#         time_string = time.strftime('%l:%M on %b %d, %Y')
+#         entry = {"username":username, "post": post, "time_string" : time_string}
+# #        posts.insert(entry)
+# #        allposts = list(posts.all())[::-1]
+# #        return render_template("newsfeed.html", allposts=allposts)
+=======<table id="profiles">
+<tr>
+<td>
+<div class="card">
+  <img src="static/images/hamzahratrout.JPG" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b>Hamzah Ratrout</b></h4> 
+    <p>Student/wecode</p> 
+  </div>
+</div>
+</td>
+</tr>
+</table>
+<table style="margin-right:540px;" id="profiles">
+<tr>
+<td>
+<div class="card">
+  <img src="static/images/ilhamsaeede.JPG" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b>Ilham Saeede</b></h4> 
+    <p>Student/wecode</p> 
+  </div>
+</div>
+</td>
+</tr>
+</table>
+
+</body>
+</html>
