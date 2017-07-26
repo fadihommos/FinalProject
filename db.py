@@ -1,6 +1,6 @@
 import dataset
 import sqlalchemy
-
+import time
 # sadek's db
 #db = dataset.connect('postgres://ykjzzkipywzyuy:d69b35fcb9b5f29f2fc27b8077c54b8d454c969c61ba024ebec353f5c658a7e7@ec2-107-22-162-158.compute-1.amazonaws.com:5432/d85u0f3u62mvt1', engine_kwargs={'poolclass':sqlalchemy.pool.NullPool})
 
@@ -43,9 +43,9 @@ def allfeeds():
 	return table.all()
 
 
-def newsfeed(emailfeed,text):
+def newsfeed(emailfeed,text,time_string):
 	newsfeed = db['newsfeeds']
-	entry = {'emailfeed':emailfeed, 'text':text}
+	entry = {'emailfeed':emailfeed, 'text':text, 'time_string':time_string}
 	insert = newsfeed.insert(entry)
 	print insert
 	return insert

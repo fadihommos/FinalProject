@@ -3,7 +3,8 @@ import db
 import os
 import time
 app = Flask(__name__)
-app.secret_key = os.urandom(24)
+app.secret_key = '\xa5-\xbe5\x0e\!x82\xba\?x99\xd0\xe3Q8\xb8\xb5\x9c\xcb\x9a\xbb\xlaksdjf04KqA\xe9i'
+
 
 @app.route("/")
 def Home():
@@ -148,7 +149,7 @@ def newsfeeds():
 		time_string = time.strftime('%l:%M on %b %d, %Y')
 #		time = time.strftime('%1:%M on %b %d, %Y')
 		print(emailfeed, text, time_string)
-		newsfeed = db.newsfeed(emailfeed, text)
+		newsfeed = db.newsfeed(emailfeed, text, time_string)
 		allnews = db.allnews()
 		newslist = list(allnews)
 		print 'post',newslist
