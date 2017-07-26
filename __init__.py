@@ -3,7 +3,7 @@ import db
 import os
 import time
 app = Flask(__name__)
-app.secret_key = '\xa5-\xbe5\x0e\!x82\xba\?x99\xd0\xe3Q8\xb8\xb5\x9c\xcb\x9a\xbb\xlaksdjf04KqA\xe9i'
+app.secret_key = "'/xa5-/xbe5/x0e/!x82\xba/?x99/xd0/xe3Q8/xb8/xb5/x9c/xcb/x9a/xbb/xlaksdjf04KqA/xe9i'"
 
 
 @app.route("/")
