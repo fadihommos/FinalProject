@@ -47,7 +47,7 @@ def newsfeed(emailfeed,text,time_string):
 	newsfeed = db['newsfeeds']
 	entry = {'emailfeed':emailfeed, 'text':text, 'time_string':time_string}
 	insert = newsfeed.insert(entry)
-	print insert
+	#print insert
 	return insert
 
 def allnews():
