@@ -136,7 +136,7 @@ def showall():
 def newsfeeds():
 	if request.method == 'GET':
 		if 'username' in session:
-			return render_template("newsfeed.html"), escape(session['username'])
+			return render_template("newsfeed.html")
 		return redirect ('/Login')
 		allnews = db.allnews()
 		newslist = list(allnews)

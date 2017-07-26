@@ -1,0 +1,26 @@
+					{% for new in newsfeed %}
+					<div class="entry-content">
+						<p>{{new.text}}</p>
+					</div> 
+
+				</article> <!-- end entry -->
+
+				<article class="entry">
+	   			
+					<header class="entry-header">
+
+
+						<div class="entry-meta">
+							<ul>
+								<li>July 23, 2017</li>
+								<span class="meta-sep">&bull;</span>								
+								<li>
+									<a href="#" title="" rel="category tag"></a>,
+									<a href="#" title="" rel="category tag">student</a>  
+								</li>
+								<span class="meta-sep">&bull;</span>
+								<li>{{new.emailfeed}}</li>
+							</ul>
+						</div> 
+					 
+					</header> 			
