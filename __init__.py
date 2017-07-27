@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, g, url_for, session, escape
+from flask import Flask, render_template, request, redirect, g, url_for, session
 import db
 import os
 import time
@@ -144,7 +144,8 @@ def newsfeeds():
 		return render_template('service.html',newsfeed = newslist)
 	else:
 		form = request.form
-		emailfeed = form['emailfeed']
+		username = session['username']
+		emailfeed = username 
 		text = form['text']
 		time_string = time.strftime('%l:%M on %b %d, %Y')
 #		time = time.strftime('%1:%M on %b %d, %Y')
@@ -154,7 +155,7 @@ def newsfeeds():
 
 		newslist = list(allnews)[::-1]
 		print 'post',newslist
-		return render_template('newsfeed.html',newsfeed = newslist, time_string= time_string)
+		return render_template('newsfeed.html',newsfeed = newslist, time_string= time_string, username = username)
 
 		newslist = list(allnews)
 		#print 'post',newslist

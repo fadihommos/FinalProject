@@ -33,6 +33,7 @@
 						<a href="/Activities">Activities</a>
 						<a href="/newsfeeds">NewsFeed</a>
 						<a type="button" href="/logout" align="1000px-2002px">Logout</a>
+						<a href="/delete"> Delete</a>
 
 					</nav>
 					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
@@ -62,11 +63,7 @@
 					<h3>Post what you think ?</h3>
 
 					<form action="/newsfeeds" method="POST">
-
-						<div class="field half">
-							<label for="email">Email</label>
-							<input name="emailfeed" id="email" type="email" placeholder="Email">
-						</div>
+						<h3>{{username}}</h3>
 						<div class="field">
 							<label for="message">Post</label>
 							<textarea name="text" id="Text" rows="6" placeholder="Text"></textarea>
