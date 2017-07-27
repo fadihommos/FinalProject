@@ -2702,8 +2702,8 @@
 	}
 
 		#header .inner {
-			margin: 0 auto;
-			position: relative;
+			margin: 0 ;
+			position: left ;
 		}
 
 		#header .logo {
@@ -2711,7 +2711,7 @@
 			display: inline-block;
 			font-weight: 400;
 			height: inherit;
-			left: 0;
+			left: 100;
 			line-height: inherit;
 			margin: 0;
 			padding: 0;
